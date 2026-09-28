@@ -1,0 +1,4 @@
+[toolchain]
+# Last known-good toolchain (rustc 1.57.0-nightly, 8f8092cc3 2021-09-28)
+channel = "nightly-2021-09-29"
+components = ["rust-src", "llvm-tools-preview"]

@@ -1,0 +1,11 @@
+- Compile bochs with debugger
+  - Use linux vm
+  - https://bochs.sourceforge.io/doc/docbook/user/compiling.html
+- Fix Double Fault - Old UId\<Thread\> was not thread safe because of phantom data
+  - Likely from thread switch
+  - Possible Causes:
+    - Clobbered rdi/rsi registers, rdx register is fine, might be bc its an enum   
+      - Casting VirtAddr, UID<Thread> to u64 to pass to asm might be the problem?
+    - Clobbered callee registers, llvm_asm could fix
+- Simplify threading
+  - Complexity makes it harder to debug, make it simple then amp it up

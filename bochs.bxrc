@@ -1,0 +1,8 @@
+megs: 16
+# The 32-bit rombios in Debian/Ubuntu's bochsbios 2.7 triple faults before reaching the disk.
+# The legacy (16-bit only) BIOS boots fine.
+romimage: file=$BXSHARE/BIOS-bochs-legacy
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+boot: disk
+
+port_e9_hack: enabled=1
